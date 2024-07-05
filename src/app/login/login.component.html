@@ -1,0 +1,17 @@
+<div class="parent-container">
+<div class="centered-container">
+<div class="partition1">
+    <img src="https://cdni.iconscout.com/illustration/premium/thumb/app-login-5948720-4922487.png?f=webp" class="img-fluid" alt="">
+</div>
+<div class="partition2 p-3 border rounded">
+ <h3 class="text-white mt-3 mb-5">Login Form</h3>
+ <form #loginForm="ngForm" (ngSubmit)="login()">
+ <input #useremail="ngModel" name="email" [(ngModel)]="email" type="text" class="form-control " placeholder="Email address" style="height: 50px;" email required>
+ <div *ngIf="useremail.invalid && useremail.touched" class="text-danger fw-bolder mb-3">*Invalid Email</div>
+ <input #userpswd="ngModel" name="password" [(ngModel)]="password" type="password" class="form-control mt-4" placeholder="Password" style="height: 50px;" pattern="[a-zA-Z0-9]*" required>
+ <div *ngIf="userpswd.invalid && userpswd.touched" class="text-danger fw-bolder mb-3">*Invalid Password</div>
+ <button [disabled]="loginForm.invalid" class="btn bg-warning mt-4 w-100 text-white" style="height: 50px;" type="submit">Login</button>
+ </form>
+</div>
+</div>
+</div>
